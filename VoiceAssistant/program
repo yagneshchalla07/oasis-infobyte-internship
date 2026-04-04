@@ -1,0 +1,102 @@
+# Voice Assistant 
+
+import speech_recognition as sr
+import pyttsx3
+import datetime
+import webbrowser
+import os
+
+# Initialize text-to-speech engine
+speaker = pyttsx3.init()
+
+# Function to convert text to speech
+def talk(message):
+    print("Assistant:", message)
+    speaker.say(message)
+    speaker.runAndWait()
+
+# Function to capture voice input
+def get_command():
+    listener = sr.Recognizer()
+
+    with sr.Microphone() as source:
+        print("Listening...")
+        listener.adjust_for_ambient_noise(source)
+        audio = listener.listen(source)
+
+    try:
+        text = listener.recognize_google(audio)
+        print("You said:", text)
+        return text.lower()
+    except:
+        talk("Sorry, I didn't understand.")
+        return ""
+
+# Function to tell current time
+def current_time():
+    now = datetime.datetime.now().strftime("%H:%M:%S")
+    talk("The time is " + now)
+
+# Function to tell today's date
+def current_date():
+    today = datetime.datetime.now().strftime("%d %B %Y")
+    talk("Today's date is " + today)
+
+# Main assistant logic
+def start_assistant():
+    talk("Hello Challa Yagnesh! I am your voice assistant. How can I help you?")
+
+    while True:
+        command = get_command()
+
+        if not command:
+            continue
+
+        # Open YouTube
+        if "open youtube" in command:
+            talk("Opening YouTube")
+            webbrowser.open("https://www.youtube.com")
+
+        # Open Google
+        elif "open google" in command:
+            talk("Opening Google")
+            webbrowser.open("https://www.google.com")
+
+        # Open VS Code
+        elif "open vs code" in command:
+            talk("Opening Visual Studio Code")
+            os.system("code")
+
+        # Play music
+        elif "play music" in command:
+            talk("Playing music")
+            os.startfile("https://youtu.be/FbXOsVByKmk?si=v3cKAhTHL1Z85NZd")
+
+        # Tell user's name
+        elif "tell my name" in command:
+            talk("Your name is Challa Yagnesh")
+
+        # Greeting
+        elif "hello" in command:
+            talk("Hello! How can I assist you?")
+
+        # Time
+        elif "what is time now" in command:
+            current_time()
+
+        # Date
+        elif "tell today's date" in command:
+            current_date()
+
+        # Exit condition
+        elif "exit" in command or "stop" in command:
+            talk("Goodbye!")
+            break
+
+        # Unknown command
+        else:
+            talk("I don't know this command yet. You can teach me!")
+
+# Run program
+if __name__ == "__main__":
+    start_assistant()
