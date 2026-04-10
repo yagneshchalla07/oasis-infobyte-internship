@@ -1,68 +1,107 @@
-🎙️ Voice Assistant (Python)
+# 🎙️ Voice Assistant (Python)
 
-A simple and interactive Voice Assistant built using Python that can listen to user commands and perform tasks like opening websites, telling time/date, and more.
+A simple and interactive **Voice Assistant** built using Python. It listens to user voice commands and performs tasks like opening websites, telling time/date, and more.
 
-📌 Features
-🎤 Voice recognition using microphone
-🔊 Text-to-speech response
-🌐 Open websites like YouTube and Google
-💻 Launch applications (Visual Studio Code)
-🎵 Play music from YouTube
-🕒 Tell current time
-📅 Tell today’s date
-👤 Recognize and respond with user name
-❌ Exit on voice command
-🛠️ Technologies Used
-Python
-speech_recognition – for voice input
-pyttsx3 – for text-to-speech
-datetime – for time and date
-webbrowser – to open websites
-os – to run system commands
+---
 
-⚙️ Installation
-Install Python (3.x) and Visual Studio Code
-Open your project folder in VS Code
-Open terminal in VS Code
-(Press `Ctrl + ``)
-Install required libraries:
+## 📌 Features
+
+- 🎤 Voice recognition using microphone  
+- 🔊 Text-to-speech response  
+- 🌐 Open websites (YouTube, Google)  
+- 💻 Open Visual Studio Code  
+- 🎵 Play music from YouTube  
+- 🕒 Tell current time  
+- 📅 Tell today’s date  
+- 👤 Respond with user name  
+- ❌ Exit with voice command  
+
+---
+
+## 🛠️ Technologies Used
+
+- Python  
+- SpeechRecognition  
+- pyttsx3  
+- datetime  
+- webbrowser  
+- os  
+
+---
+
+## 📂 Project Structure
+
+voice_assistant.py  
+README.md  
+
+---
+
+## ⚙️ Installation
+
+1. Install **Python (3.x)** and **Visual Studio Code**
+
+2. Open your project folder in VS Code
+
+3. Open terminal (`Ctrl + \``)
+
+4. Install dependencies:
 pip install SpeechRecognition pyttsx3 pyaudio
-If pyaudio fails, run:
-pip install pipwin
-pipwin install pyaudio
-Run the program:
-python voice_assistant.py
-▶️ How to Run
 
-Run the Python file:
+5. If `pyaudio` fails:
+pip install pipwin  
+pipwin install pyaudio  
 
-python voice_assistant.py
-🎯 Available Voice Commands
-Command	Action
-"open youtube"	Opens YouTube
-"open google"	Opens Google
-"open vs code"	Opens Visual Studio Code
-"play music"	Plays a YouTube song
-"tell my name"	Says your name
-"hello"	Greets you
-"what is time now"	Tells current time
-"tell today's date"	Tells today's date
-"exit" / "stop"	Stops the assistant
-📸 Sample Output
-Assistant: Hello Challa Yagnesh! I am your voice assistant. How can I help you?
-Listening...
-You said: open youtube
-Assistant: Opening YouTube
-⚠️ Requirements
-Python 3.x
-Microphone (for voice input)
-Internet connection (for speech recognition & web features)
-🚀 Future Enhancements
-Add more voice commands
-Integrate AI chatbot features
-Control system settings (volume, brightness, etc.)
-Add GUI interface
-👨‍💻 Author
+6. Run the project:
+python voice_assistant.py  
 
-Challa Yagnesh
-Internship Project – OASIS INFOBYTE
+---
+
+## 🎯 Voice Commands
+
+| Command | Action |
+|--------|--------|
+| open youtube | Opens YouTube |
+| open google | Opens Google |
+| open vs code | Opens VS Code |
+| play music | Plays a song |
+| tell my name | Tells your name |
+| hello | Greeting |
+| what is time now | Tells time |
+| tell today's date | Tells date |
+| exit / stop | Exit assistant |
+
+---
+
+## 📸 Sample Output
+
+Assistant: Hello Challa Yagnesh! I am your voice assistant. How can I help you?  
+Listening...  
+You said: open youtube  
+Assistant: Opening YouTube  
+
+---
+
+## ⚠️ Requirements
+
+- Python 3.x  
+- Microphone  
+- Internet connection  
+
+---
+
+## 🚀 Future Improvements
+
+- Add more commands  
+- Add GUI  
+- Integrate AI chatbot  
+- System control features  
+
+---
+
+## 👨‍💻 Author
+
+**Challa Yagnesh**  
+Internship Project – OASIS INFOBYTE  
+
+---
+
